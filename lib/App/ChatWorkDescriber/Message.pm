@@ -26,3 +26,35 @@ sub describe_message {
 }
 
 1;
+
+__END__
+=encoding utf8
+
+=head1 NAME
+
+App::ChatWorkDescriber::Message - Provides functions to wether description is needed
+
+=head1 SYNOPSIS
+
+  use App::ChatWorkDescriber::Message;
+  my $message = "http://example.com";
+  warn App::ChatWorkDescriber::Message->does_description_need; # <- 1;
+  warn App::ChatWorkDescriber::Message->describe_message; # <- Example Domain;
+
+=head1 DESCRIPTION
+
+This module provides a few functions which will be applied to message.
+
+=head1 FUNCTIONS (CLASS METHODS)
+
+=over
+
+=item does_description_need
+
+Returns bool wether the message needs to be described.
+
+=item describe_message
+
+Returns a description which is tagged.  The tag spec. is ChatWork spec.
+
+=back

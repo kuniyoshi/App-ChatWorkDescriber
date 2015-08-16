@@ -54,3 +54,26 @@ sub post_described_messages {
 }
 
 1;
+
+__END__
+=encoding utf8
+
+=head1 NAME
+
+App::ChatWorkDescriber::Room - Room class to fetch new messages, and post described message
+
+=head1 SYNOPSIS
+
+  use App::ChatWorkDescriber::Room;
+  my $room = App::ChatWorkDescriber::Room->new(
+      api => $api,
+  );
+  $room->setup( $room_name );
+  $room->fetch;
+  $room->post_described_messages;
+
+=head1 DESCRIPTION
+
+This class holds room data of WebService::ChatWorkApi, and query to the room to
+wether new messages are posted.  If there exists new messages, then this instance
+stores it to self, and then use it at posting described message.
